@@ -28,4 +28,3 @@ npm run build
 
 - Colors, and the Lora/Public Sans font roles, are defined once in `src/index.css` under `@theme` and consumed as Tailwind utilities (`bg-green`, `text-brass`, etc.)
 - Fractional spacing utilities (`py-6.5`, `gap-4.5`, etc.) rely on Tailwind v4's dynamic spacing scale
-# glorylane

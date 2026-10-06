@@ -1,5 +1,6 @@
 import { PageHero, Divider } from "../components/ui/SectionHead";
 import HouseCards from "../components/studentlife/HouseCards";
+import Reveal from "../components/ui/Reveal";
 
 const CLUBS = [
   "Debate Club — weekly Friday sessions, competes in the Lagos Schools Debate League",
@@ -38,7 +39,7 @@ export default function StudentLifePage() {
       </PageHero>
 
       <section className="py-16">
-        <div className="max-w-[1120px] mx-auto px-6">
+        <Reveal direction="up" className="max-w-[1120px] mx-auto px-6">
           <h3 className="text-xl mb-3">The house system</h3>
           <p className="max-w-[70ch] mb-6">
             Every student is sorted into one of four houses in their first week and stays in it through to SSS3.
@@ -46,21 +47,21 @@ export default function StudentLifePage() {
             who tracks pastoral matters alongside form teachers.
           </p>
           <HouseCards />
-        </div>
+        </Reveal>
       </section>
 
       <Divider />
 
       <section className="py-11">
         <div className="max-w-[1120px] mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-10">
-          <div>
+          <Reveal direction="left">
             <h3 className="text-xl mb-3">Clubs & competitions</h3>
             <CheckList items={CLUBS} />
-          </div>
-          <div>
+          </Reveal>
+          <Reveal direction="right">
             <h3 className="text-xl mb-3">Sports</h3>
             <CheckList items={SPORTS} />
-          </div>
+          </Reveal>
         </div>
       </section>
 
@@ -68,43 +69,43 @@ export default function StudentLifePage() {
 
       <section className="py-11">
         <div className="max-w-[1120px] mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-10">
-          <div>
+          <Reveal direction="left">
             <h3 className="text-xl mb-3">Uniform</h3>
             <p>
               Bottle-green blazer with the school crest, cream shirt, and grey trousers or pinafore. House
               colours appear only on the sports kit, worn on P.E. days and inter-house fixtures. The uniform
               list and approved suppliers are included with the offer letter.
             </p>
-          </div>
-          <div>
+          </Reveal>
+          <Reveal direction="right">
             <h3 className="text-xl mb-3">Counselling & pastoral care</h3>
             <p>
               A full-time guidance counsellor runs weekly drop-in hours for every year group and coordinates
               career counselling from SSS2, including WAEC/NECO subject-choice guidance and university
               application support.
             </p>
-          </div>
+          </Reveal>
         </div>
       </section>
 
       <section className="py-11">
         <div className="max-w-[1120px] mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-10">
-          <div>
+          <Reveal direction="left">
             <h3 className="text-xl mb-3">Transport</h3>
             <p>
               Seven bus routes cover Lekki Phase 1 & 2, Chevron, Ajah, Victoria Island, and Ikoyi, each with a
               staff supervisor on board. Routes and stops are confirmed each August; contact the office to check
               coverage for a specific street.
             </p>
-          </div>
-          <div>
+          </Reveal>
+          <Reveal direction="right">
             <h3 className="text-xl mb-3">Feeding & clinic</h3>
             <p>
               A cafeteria serves a rotating lunch menu with a vegetarian option daily; students may also bring
               lunch from home. A resident nurse staffs the first-aid room throughout the school day, with a
               written allergy and medication policy on file for every student.
             </p>
-          </div>
+          </Reveal>
         </div>
       </section>
     </main>

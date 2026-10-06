@@ -1,6 +1,7 @@
 import { useMemo, useState } from "react";
 import { galleryItems, type GalleryItem } from "../../data/content";
 import GalleryLightbox from "./GalleryLightbox";
+import Reveal from "../ui/Reveal";
 
 const CATEGORIES: Array<GalleryItem["category"] | "All"> = [
   "All",
@@ -38,11 +39,11 @@ export default function GalleryGrid() {
       </div>
 
       <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-        {filteredItems.map((item) => {
+        {filteredItems.map((item, index) => {
           const trueIndex = galleryItems.findIndex((galleryItem) => galleryItem.id === item.id);
           return (
+            <Reveal key={item.id} delay={(index % 3) * 0.08}>
             <button
-              key={item.id}
               onClick={() => setLightboxIndex(trueIndex)}
               className="text-left bg-sage border border-sage-line rounded-sm overflow-hidden cursor-pointer group"
             >
@@ -57,6 +58,7 @@ export default function GalleryGrid() {
                 <h4 className="text-sm m-0">{item.title}</h4>
               </div>
             </button>
+            </Reveal>
           );
         })}
       </div>

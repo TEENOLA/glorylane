@@ -1,5 +1,6 @@
 import { PageHero } from "../components/ui/SectionHead";
 import GalleryGrid from "../components/gallery/GalleryGrid";
+import Reveal from "../components/ui/Reveal";
 
 export default function GalleryPage() {
   return (
@@ -13,9 +14,9 @@ export default function GalleryPage() {
       </PageHero>
 
       <section className="py-16">
-        <div className="max-w-[1120px] mx-auto px-6">
+        <Reveal direction="up" className="max-w-[1120px] mx-auto px-6">
           <GalleryGrid />
-        </div>
+        </Reveal>
       </section>
     </main>
   );

@@ -1,5 +1,6 @@
 import { pillars } from "../../data/content";
 import { SectionHead } from "../ui/SectionHead";
+import Reveal from "../ui/Reveal";
 
 export default function Pillars() {
   return (
@@ -19,8 +20,10 @@ export default function Pillars() {
                 : "sm:border-l lg:border-l";
             return (
               <div key={pillar.title} className={`p-7 border-b border-rule ${borderClasses}`}>
-                <h4 className="text-base mb-2">{pillar.title}</h4>
-                <p className="text-sm m-0">{pillar.description}</p>
+                <Reveal delay={index * 0.1}>
+                  <h4 className="text-base mb-2">{pillar.title}</h4>
+                  <p className="text-sm m-0">{pillar.description}</p>
+                </Reveal>
               </div>
             );
           })}

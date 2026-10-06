@@ -1,5 +1,6 @@
 import { newsItems } from "../../data/content";
 import { LinkArrow } from "../ui/Buttons";
+import Reveal from "../ui/Reveal";
 
 export default function NewsSection() {
   return (
@@ -13,12 +14,12 @@ export default function NewsSection() {
           <LinkArrow>All news</LinkArrow>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6.5">
-          {newsItems.map((item) => (
-            <div key={item.title} className="border-t-2 border-brass pt-3.5">
+          {newsItems.map((item, index) => (
+            <Reveal key={item.title} delay={index * 0.1} className="border-t-2 border-brass pt-3.5">
               <div className="text-xs text-brass font-bold tracking-wide mb-1.5">{item.date}</div>
               <h4 className="text-base mb-1.5">{item.title}</h4>
               <p className="text-sm">{item.summary}</p>
-            </div>
+            </Reveal>
           ))}
         </div>
       </div>

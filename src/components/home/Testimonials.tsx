@@ -1,5 +1,6 @@
 import { testimonials } from "../../data/content";
 import { SectionHead } from "../ui/SectionHead";
+import Reveal from "../ui/Reveal";
 
 export default function Testimonials() {
   return (
@@ -12,8 +13,10 @@ export default function Testimonials() {
               key={testimonial.source}
               className={`pt-6.5 px-6 lg:px-6 ${index === 0 ? "" : "border-t lg:border-t-0 lg:border-l"} border-rule`}
             >
-              <blockquote className="font-serif italic text-base text-ink mb-3.5">"{testimonial.quote}"</blockquote>
-              <cite className="not-italic text-sm text-ink-soft font-semibold">— {testimonial.source}</cite>
+              <Reveal delay={index * 0.12}>
+                <blockquote className="font-serif italic text-base text-ink mb-3.5">"{testimonial.quote}"</blockquote>
+                <cite className="not-italic text-sm text-ink-soft font-semibold">— {testimonial.source}</cite>
+              </Reveal>
             </div>
           ))}
         </div>

@@ -1,5 +1,6 @@
 import { PageHero, Divider } from "../components/ui/SectionHead";
 import { leaders } from "../data/content";
+import Reveal from "../components/ui/Reveal";
 
 const ACCREDITATIONS = [
   "Approved by the Lagos State Ministry of Education (Approval No. LSMOE/PRIV/0421)",
@@ -18,7 +19,7 @@ export default function AboutPage() {
 
       <section className="py-16">
         <div className="max-w-[1120px] mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-10">
-          <div>
+          <Reveal direction="left">
             <h3 className="text-xl mb-3">Our history</h3>
             <p>
               GloryLane School opened in September 1998 in a converted residential building in Lekki Phase 1,
@@ -30,8 +31,8 @@ export default function AboutPage() {
               The school has been run by the same founding family for its entire history. Mrs. Folake Adeyemi,
               daughter of founder Chief (Mrs.) Comfort Adeyemi, has served as Proprietress since 2014.
             </p>
-          </div>
-          <div>
+          </Reveal>
+          <Reveal direction="right">
             <h3 className="text-xl mb-3">Mission & vision</h3>
             <p>
               <b className="text-ink">Mission —</b> to give every student a rigorous academic foundation and the
@@ -42,14 +43,14 @@ export default function AboutPage() {
               first, on the strength of results parents can verify and a campus they'd choose for their own
               children.
             </p>
-          </div>
+          </Reveal>
         </div>
       </section>
 
       <Divider />
 
       <section className="py-11">
-        <div className="max-w-[1120px] mx-auto px-6">
+        <Reveal direction="up" className="max-w-[1120px] mx-auto px-6">
           <h3 className="text-xl mb-4">Accreditation & affiliations</h3>
           <ul className="max-w-xl">
             {ACCREDITATIONS.map((item) => (
@@ -59,11 +60,11 @@ export default function AboutPage() {
               </li>
             ))}
           </ul>
-        </div>
+        </Reveal>
       </section>
 
       <section className="py-11">
-        <div className="max-w-[1120px] mx-auto px-6">
+        <Reveal direction="up" className="max-w-[1120px] mx-auto px-6">
           <h3 className="text-xl mb-4">Leadership</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-5">
             {leaders.map((leader) => (
@@ -80,7 +81,7 @@ export default function AboutPage() {
               </div>
             ))}
           </div>
-        </div>
+        </Reveal>
       </section>
     </main>
   );

@@ -18,6 +18,8 @@
 
 html {
   scroll-behavior: smooth;
+  /* Slide-in elements start off to the side; clip so they never cause horizontal scroll */
+  overflow-x: clip;
 }
 
 body {

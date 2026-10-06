@@ -3,6 +3,7 @@ import { facilities } from "../../data/content";
 import { SectionHead } from "../ui/SectionHead";
 import { LinkArrow } from "../ui/Buttons";
 import { FlaskIcon, BookIcon, TargetIcon, MonitorIcon, ClinicIcon, BusIcon } from "../icons/MarkIcons";
+import Reveal from "../ui/Reveal";
 
 const ICONS = {
   flask: FlaskIcon,
@@ -23,13 +24,15 @@ export default function FacilitiesGrid() {
       </div>
       <div className="max-w-[1120px] mx-auto px-6">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-rule border border-rule">
-          {facilities.map((facility) => {
+          {facilities.map((facility, index) => {
             const Icon = ICONS[facility.icon];
             return (
               <div key={facility.title} className="bg-cream p-6.5">
-                <Icon className="w-7.5 h-7.5 mb-3.5" />
-                <h4 className="text-[0.98rem] mb-1.5">{facility.title}</h4>
-                <p className="text-sm m-0">{facility.description}</p>
+                <Reveal delay={(index % 3) * 0.1}>
+                  <Icon className="w-7.5 h-7.5 mb-3.5" />
+                  <h4 className="text-[0.98rem] mb-1.5">{facility.title}</h4>
+                  <p className="text-sm m-0">{facility.description}</p>
+                </Reveal>
               </div>
             );
           })}

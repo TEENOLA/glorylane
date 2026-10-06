@@ -2,6 +2,7 @@ import { PageHero } from "../components/ui/SectionHead";
 import { PinIcon, PhoneIcon, MailIcon, ClockIcon } from "../components/icons/MarkIcons";
 import ContactForm from "../components/contact/ContactForm";
 import MapEmbed from "../components/contact/MapEmbed";
+import Reveal from "../components/ui/Reveal";
 
 const SOCIAL_LINKS = ["IG", "FB", "X", "YT"];
 
@@ -14,7 +15,7 @@ export default function ContactPage() {
 
       <section className="py-16">
         <div className="max-w-[1120px] mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12">
-          <div>
+          <Reveal direction="left">
             <div className="flex gap-3.5 py-4 border-b border-rule">
               <PinIcon className="w-5.5 h-5.5 mt-0.5 shrink-0" />
               <div>
@@ -62,12 +63,12 @@ export default function ContactPage() {
             </div>
 
             <MapEmbed />
-          </div>
+          </Reveal>
 
-          <div>
+          <Reveal direction="right">
             <h3 className="text-xl mb-4">Send an enquiry</h3>
             <ContactForm />
-          </div>
+          </Reveal>
         </div>
       </section>
     </main>

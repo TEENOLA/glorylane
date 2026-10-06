@@ -1,4 +1,5 @@
 import { registerStats } from "../../data/content";
+import Reveal from "../ui/Reveal";
 
 export default function StatsRegister() {
   return (
@@ -8,8 +9,10 @@ export default function StatsRegister() {
           key={stat.label}
           className={`py-6.5 px-5 text-left border-rule ${index % 2 === 1 ? "border-l" : ""} md:border-l md:first:border-l-0`}
         >
-          <span className="block font-serif text-3xl font-semibold text-green-dark">{stat.value}</span>
-          <span className="text-xs text-ink-soft mt-1 block">{stat.label}</span>
+          <Reveal delay={index * 0.08}>
+            <span className="block font-serif text-3xl font-semibold text-green-dark">{stat.value}</span>
+            <span className="text-xs text-ink-soft mt-1 block">{stat.label}</span>
+          </Reveal>
         </div>
       ))}
     </div>

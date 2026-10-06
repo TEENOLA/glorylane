@@ -2,6 +2,7 @@ import { Divider } from "../components/ui/SectionHead";
 import { CtaPill, CtaGhostLink } from "../components/ui/Buttons";
 import AdmissionSteps from "../components/admissions/AdmissionSteps";
 import FaqAccordion from "../components/admissions/FaqAccordion";
+import Reveal from "../components/ui/Reveal";
 
 const REQUIRED_DOCUMENTS = [
   "Original birth certificate or international passport",
@@ -15,7 +16,7 @@ export default function AdmissionsPage() {
   return (
     <main>
       <div className="bg-sage border-b border-sage-line py-12 md:py-14">
-        <div className="max-w-[1120px] mx-auto px-6">
+        <Reveal direction="left" className="max-w-[1120px] mx-auto px-6">
           <div className="text-xs font-semibold text-brass mb-2">ADMISSIONS</div>
           <h1 className="text-3xl md:text-4xl mb-2">Admissions open for 2026/2027</h1>
           <p className="max-w-[56ch] m-0">
@@ -26,21 +27,21 @@ export default function AdmissionsPage() {
             <CtaPill variant="brass">Download Admission Form (PDF)</CtaPill>
             <CtaGhostLink href="https://wa.me/2348001234567">Ask Admissions on WhatsApp</CtaGhostLink>
           </div>
-        </div>
+        </Reveal>
       </div>
 
       <section className="py-16">
-        <div className="max-w-[1120px] mx-auto px-6">
+        <Reveal direction="up" className="max-w-[1120px] mx-auto px-6">
           <h3 className="text-xl mb-4">How admission works</h3>
           <AdmissionSteps />
-        </div>
+        </Reveal>
       </section>
 
       <Divider />
 
       <section className="py-11">
         <div className="max-w-[1120px] mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-10">
-          <div>
+          <Reveal direction="left">
             <h3 className="text-xl mb-3">Entry requirements</h3>
             <p className="mb-3.5">
               <b className="text-ink">JSS1 —</b> age 10–12 by September of the entry year, on completion of
@@ -51,8 +52,8 @@ export default function AdmissionsPage() {
               terms' report cards from the applicant's current school; subject-by-subject placement confirmed at
               interview.
             </p>
-          </div>
-          <div>
+          </Reveal>
+          <Reveal direction="right">
             <h3 className="text-xl mb-3">Required documents</h3>
             <ul>
               {REQUIRED_DOCUMENTS.map((doc) => (
@@ -62,14 +63,14 @@ export default function AdmissionsPage() {
                 </li>
               ))}
             </ul>
-          </div>
+          </Reveal>
         </div>
       </section>
 
       <Divider />
 
       <section className="py-11">
-        <div className="max-w-[1120px] mx-auto px-6">
+        <Reveal direction="up" className="max-w-[1120px] mx-auto px-6">
           <h3 className="text-xl mb-3">Fees</h3>
           <p className="max-w-[64ch] mb-4">
             Tuition varies by class level and is billed per term. Because fees are reviewed annually, we don't
@@ -77,16 +78,16 @@ export default function AdmissionsPage() {
             or WhatsApp.
           </p>
           <CtaPill>Request Fee Schedule</CtaPill>
-        </div>
+        </Reveal>
       </section>
 
       <Divider />
 
       <section className="py-11">
-        <div className="max-w-[1120px] mx-auto px-6">
+        <Reveal direction="up" className="max-w-[1120px] mx-auto px-6">
           <h3 className="text-xl mb-4">Frequently asked questions</h3>
           <FaqAccordion />
-        </div>
+        </Reveal>
       </section>
     </main>
   );
