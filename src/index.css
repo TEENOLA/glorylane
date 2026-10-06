@@ -1,0 +1,41 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Lora", serif;
+  --font-sans: "Public Sans", sans-serif;
+
+  --color-green: #1b4332;
+  --color-green-dark: #12302b;
+  --color-cream: #faf6ef;
+  --color-ink: #211f1a;
+  --color-ink-soft: #4a4740;
+  --color-brass: #ad8629;
+  --color-brass-light: #e4c878;
+  --color-sage: #e9efe4;
+  --color-sage-line: #c9d6c2;
+  --color-rule: #d9d2c2;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-cream);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+}
+
+@layer base {
+  h1, h2, h3, h4 {
+    font-family: var(--font-serif);
+    color: var(--color-green-dark);
+  }
+}
+
+/* Smooth-height FAQ accordion panels */
+.faq-panel {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.25s ease;
+}
